@@ -1,0 +1,244 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+button {
+  background-color: rgba(65, 161, 255, 0);
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: rgba(65, 161, 255, 1);
+  transform: scale(1.02);
+  border: none;
+}
+
+button.primary {
+  min-width: 100px;
+  padding: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(65, 161, 255, 1) 0%,
+    rgba(54, 123, 241, 1) 100%
+  );
+  border: none;
+}
+
+button.white {
+  background: white;
+}
+
+a {
+  color: black;
+}
+
+.onlyMobile {
+  display: none;
+}
+
+.customHover:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.drawer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: black;
+  background: linear-gradient(
+    90deg,
+    rgba(65, 161, 255, 1) 0%,
+    rgba(54, 123, 241, 1) 100%
+  );
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100%;
+  /* display: none; */
+  z-index: 1000;
+}
+
+.drawer:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50% 50%;
+  width: 285px;
+  height: 285px;
+  background-color: white;
+  right: 0px;
+  top: 0;
+  transform: translate(50%, -50%);
+}
+
+.flexTopRes {
+  flex-direction: row;
+}
+
+/* PATTERN */
+
+.pattern {
+  position: relative;
+  background-color: rgb(30, 82, 134);
+  background-image: linear-gradient(
+    90deg,
+    rgba(65, 161, 255, 1) 0%,
+    rgba(54, 123, 241, 1) 100%
+  );
+  height: calc(100vh + 150px);
+  /* height: calc(100% + 400px); */
+  /* max-height: 800px; */
+}
+
+.Input-Button > input {
+  border-radius: 1rem 0 0 1rem;
+  border: 1px solid #7c7c7c;
+  border-right: 0px;
+}
+
+.Input-Button > .primary {
+  border-radius: 0 1rem 1rem 0;
+  font-size: 1.2rem;
+  color: white;
+  padding: 10px;
+  border: 1px solid #7c7c7c;
+  border-left: 0px;
+}
+input {
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  padding: 10px;
+  border: 1px solid #7c7c7c;
+}
+
+.pattern:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 307px;
+  background: url(wave2.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Custom Scroll */
+
+body::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 20px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+  }
+  footer > * {
+    margin-top: 10px;
+  }
+
+  .flexTopRes {
+    flex-direction: column-reverse;
+    /* flex-wrap: wrap; */
+  }
+
+  .flexWrapRes {
+    flex-wrap: wrap;
+  }
+  .onlyDesktop {
+    display: none;
+  }
+  .onlyMobile {
+    display: block;
+  }
+}
+
+@media only screen and (max-height: 640px) {
+  .pattern {
+    height: calc(100vh + 300px);
+  }
+}
+
+@media only screen and (max-width: 787px) {
+  .Input-Button > input {
+    border-radius: 1rem;
+    border: 1px solid #7c7c7c;
+    border-bottom: 0px;
+    border-radius: 1rem 1rem 0 0;
+    width: calc(100% - 22px);
+  }
+  .Input-Button > .primary {
+    border-radius: 1rem;
+    border: 1px solid #7c7c7c;
+    border-top: 0px;
+    border-radius: 0 0 1rem 1rem;
+    width: 100%;
+  }
+}
+
+/* extras */
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+.card {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+.card > .title {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.special {
+  font-size: 0.6em;
+  font-weight: 700;
+  padding: 5px 15px;
+  margin: 0 0 10px 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(65, 161, 255, 0.5) 0%,
+    rgba(54, 123, 241, 0.5) 100%
+  );
+  border-radius: 10px;
+}
